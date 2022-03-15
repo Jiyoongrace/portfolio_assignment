@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+     * {margin: 0; padding: 0;}
+    body {background-color:#cffc95;}
+    .edge {color: black; text-align: center; width: 1000px; height: 640px; margin: 0 auto;}
+    #aside {width: 250px; height: 640px;
+    font-family : 'Cafe24Dangdanghae'; color : white; background-color: #DDECCA; font-size : 40px; line-height:30px;
+    text-shadow: -2px 0px 0px #000, 0px 2px #000, 0px -2px 0px #000, 2px 0px 0px #000; float: left;}
+    #section1 {background:#a3f7b8; width: 750px; height: 345px; float: left; line-height: 30px;}
+    #section2 {background:#a5e0b7; width: 750px; height: 295px; float: left; line-height: 30px;}
+    #footer {background: rgb(102, 105, 128); width: 1000px; height: 20px; clear:both; 
+    line-height: 19px;font-size: 2px; color: white; font-family: 'Cafe24Dangdanghae';}
+    #Back {font-family : 'Cafe24Dangdanghae'; color : white; background-color: black; font-size : 20px;
+    position : fixed; top : 50px; left : 30px;}
+    #Back:hover {border: medium double black; color : #003cff; background-color: white;}
+    #circle {width: 70%; height: 70%; border-radius: 70%; }
+    #font1 {font-size: 23px; font-family: 'Cafe24Dangdanghae'; color: black; text-shadow: 3px 3px 5px rgb(255, 255, 255);}
+    ul {text-align:left;}
+    li {display: inline-block; background-color:rgb(102, 105, 128); font-family:'Cafe24Dangdanghae'; font-size: 30px;}
+    #font2 {font-size: 28px; font-family: 'Cafe24Dangdanghae'; color: rgb(255, 255, 255);
+    background-color:#afca8b; border-radius: 80%; padding: 0.1em 0.1em; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);}
+    #font3 {font-size: 22px; font-family: 'Cafe24Dangdanghae'; color: white; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);
+    background-color: #4bad24; border-radius: 80%; padding: 0.1em 0.1em;}
+    #font4 {font-size: 22px; font-family: 'Cafe24Dangdanghae'; color: rgb(14, 59, 48); text-shadow: 2px 2px 3px rgb(235, 255, 222);}
+    #font5 {font-size: 22px; font-family: 'Cafe24Dangdanghae'; color: white; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);
+    background-color: #4bad24; padding: 0.07em 0.07em;}
+    #font6 {font-size: 25px; font-family: 'Cafe24Dangdanghae'; color: white; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);
+    background-color: #00306e; padding: 0.07em 0.07em;}

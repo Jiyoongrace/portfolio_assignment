@@ -1,0 +1,45 @@
+    @font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+     * {margin: 0; padding: 0;}
+    body {background-color: #c1f0ff;}
+    .edge {color: black; text-align: center; width: 1000px; height: 670px; margin: 0 auto;}
+    #header { width: 1000px; height: 50px; line-height: 50px;
+    font-family : 'Cafe24Dangdanghae'; color : white; background-color: #CCD2F0; font-size : 40px;
+    text-shadow: -2px 0px 0px #000, 0px 2px #000, 0px -2px 0px #000, 2px 0px 0px #000}
+    #nav {background: #a4addf; width: 1000px; height: 20px;}
+    #aside {background: #84b5ff; width: 300px; height: 600px; float: left;}
+    #section1 {background: #2885ff; width: 700px; height: 330px; float:right;}
+    #section2 {background: #677ce0; width: 350px; height: 270px; float:left; text-align:left;}
+    #section3 {background: #6e46ff; width: 350px; height: 270px; float:right; text-align:center; font-size:1px;}
+    #footer {background: rgb(102, 105, 128); width: 1000px; height: 20px; clear:both; 
+    line-height: 19px; font-size: 2px; color: white; font-family: 'Cafe24Dangdanghae';}
+    #Back {font-family : 'Cafe24Dangdanghae'; color : white; background-color: black; font-size : 20px;
+    position : fixed; top : 50px; left : 30px;}
+    #Back:hover {border: medium double black; color : #003cff; background-color: white;}
+    #circle {width: 70%; height: 70%; border-radius: 70%; }
+    #font1 {font-size: 23px; font-family: 'Cafe24Dangdanghae'; text-shadow: 1.8px 1.8px 2.3px rgb(255, 255, 255);}
+    #font2 {font-size: 17px; font-family: 'Cafe24Dangdanghae'; color: white;
+    text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0); line-height: 30px;}
+    #font3 {font-size: 17px; font-family: 'Cafe24Dangdanghae'; color: white; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);
+    background-color: #6726ff; border-radius: 80%; padding: 0.1em 0.1em;}
+    #font4 {font-size: 25px; font-family: 'Cafe24Dangdanghae'; color: rgb(255, 255, 255);
+    background-color:#ffcf4a; border-radius: 80%; padding: 0.1em 0.1em; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);}
+    #font5 {font-size: 28px; font-family: 'Cafe24Dangdanghae'; color: rgb(255, 255, 255);
+    background-color:#a4addf; border-radius: 80%; padding: 0.1em 0.1em; text-shadow: 1.2px 1.2px 1.4px rgb(0, 0, 0);}
+    #icon1 {overflow: hidden; width: 50px; height: 50px;}
+    #icon2 {overflow: hidden; width: 37px; height: 37px;}
+    table {padding-right:20px; border-collapse: collapse; border-style: outset; text-align: center;
+    line-height: 0.5; margin: auto; border-color: rgb(1, 33, 175); box-shadow: 2px 2px 3px rgb(0, 0, 0);}
+    thead th {padding: 3px; font-weight: bold; vertical-align: center; color: rgb(255, 255, 255);
+    border-bottom: 3.5px solid rgb(92, 92, 92); background-color: #a4addf;}
+    tbody th {width: 100px; padding: 8px; font-weight: bold; vertical-align: center;
+    border-bottom: 1px solid rgb(117, 117, 117); background: #b8edff;}
+    td { width: 350px; padding: 1px; vertical-align: center; border-bottom: 1px solid #ccc;}
+    #content {font-size: 17px; font-family: 'Cafe24Dangdanghae'; text-shadow:rgb(0, 0, 0);
+    color: white; background-color: #214097; border-radius: 70%; padding: 0.1em 0.1em;}
+    #font6 {color:#ffffff; background-color: #214097; border-radius: 80%; padding: 0.1em 0.1em; text-decoration: underline;}
+    iframe {box-shadow: 2px 2px 5px 1px rgb(0, 0, 0);}

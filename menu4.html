@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>ETC</title>
+            <link rel="stylesheet" type="text/css" href="menu4.css"/>
+        </head>
+        <body>
+            <a id = "Back" href="index.html" title="Back">돌아가기</a>
+            <div class="edge">
+                <header>
+                    <div id="header">
+                        <div id="space">ETC</div>
+                    </div>
+                </header>
+                <nav>
+                    <div id ="nav">
+                        <div id="space">
+                            <span id="font4">My Materials</span>&nbsp;&nbsp;
+                            <span id="font6">카드뉴스 제작 (숙명여대 홍보대사 앰배서더)</span><br>
+                            <table>
+                                <tr>
+                                    <span id="font8">
+                                        <form>Programs I can do&nbsp;&nbsp;
+                                            <input type="checkbox" name="skills" value="Photoshoop" checked>&nbsp;포토샵&nbsp;
+                                            <input type="checkbox" name="skills" value="Premiere pro" checked>&nbsp;프리미어 프로&nbsp;
+                                            <input type="checkbox" name="skills" value="Illustrator" checked>&nbsp;일러스트레이터&nbsp;
+                                            <input type="checkbox" name="skills" value="Aftereffect">&nbsp;에프터이펙트&nbsp;
+                                        </form>
+                                    </span>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <figure>
+                                            <img src="images/cardnews1.jpg" name="cardnews1" width="198" height="198">
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure>
+                                            <img src="images/cardnews2.jpg" name="cardnews2" width="198" height="198">
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure>
+                                            <img src="images/cardnews3.jpg" name="cardnews3" width="198" height="198">
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure>
+                                            <img src="images/cardnews4.jpg" name="cardnews4" width="198" height="198">
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure>
+                                            <img src="images/cardnews5.jpg" name="cardnews5" width="198" height="198">
+                                        </figure>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </nav>
+                <article>
+                <div id ="article">
+                        <div id="space">
+                            <table style="width: 1000px; padding: 2px 2px;">
+                                <tr>
+                                    <td><span id="font4">TMI</span><br><span id="font9">
+                                    &nbsp;&nbsp;&nbsp;1. 아이돌 노래 수록곡을 즐겨 듣는다.<br>
+                                    &nbsp;&nbsp;&nbsp;2. 굉장히 건강한 음식을 좋아한다.<br>
+                                    &nbsp;&nbsp;&nbsp;3. 오늘의 내 기분은 삼성라이온즈가 이겼는지에 달려있다.<br>
+                                    &nbsp;&nbsp;&nbsp;4. 카페라떼와 올리브영 초코시나몬 베이글칩 조합을 즐긴다.<br>
+                                    &nbsp;&nbsp;&nbsp;5. 부정적인 일이 생기면 빠르게 잊는 편이다.<br></span>
+                                    </td>
+                                    <td>
+                                        <video controls autoplay width ="150" height="200" src="video/snow mascot video.MOV">
+                                        비디오 재생 오류</video>
+                                        <br><span id="font10">캠퍼스투어 영상 당시 찍은 눈송이 영상</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table id="tb">
+                                <tr>
+                                    <td colspan="2" style= "text-align: right;">
+                                        <span>Canvas&nbsp;</span> 
+                                        <br><span id="css2"> ESTJ 사업가형 : 사실적, 실용적, 논리적, 현실적인 스타일</span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <canvas id="myCanvas" width="420" height="320"></canvas>
+                                        <script type="text/javascript">     
+                                            //canvas요소에 대한 Context 개체 가져오기            
+                                            var canvas = document.getElementById('myCanvas');
+                                            var myContext = canvas.getContext('2d');
+                                            var text1 = "계획형";
+                                            var text2 = "외향형";
+                                            var text3 = "감성적";
+                                            var text4 = "이성적";
+                                            var text5 = "내향형";
+                                            
+                                            // 오각형
+                                        
+                                            myContext.beginPath();
+                                            myContext.strokeStyle = "indigo";
+                                            myContext.fillStyle = "lavender";
+                                            myContext.lineJoin = "round";
+                                            myContext.lineWidth = 12;
+                                            myContext.moveTo(210, 45);
+                                            myContext.lineTo(75, 145);
+                                            myContext.lineTo(140, 285);
+                                            myContext.lineTo(280, 285);
+                                            myContext.lineTo(345, 145);
+                                            myContext.closePath();
+                                            myContext.stroke();
+                                            myContext.fill();
+                                            
+                                            // 오각형 안의 내부 다각형
+                                            myContext.beginPath();
+                                            myContext.strokeStyle = "dimgray";
+                                            myContext.fillStyle = "lightsteelblue";
+                                            myContext.lineJoin = "round";
+                                            myContext.lineWidth = 5;
+                                            myContext.moveTo(210, 100); // 계획형
+                                            myContext.lineTo(100, 150); // 외향형
+                                            myContext.lineTo(180, 220); // 감성적
+                                            myContext.lineTo(260, 255); // 이성적
+                                            myContext.lineTo(260, 165); // 내향형
+                                            myContext.closePath();
+                                            myContext.stroke();
+                                            myContext.fill();
+                                            
+                                            // 오각형 내부 선
+                                            myContext.beginPath();
+                                            myContext.moveTo(210, 45);
+                                            myContext.strokeStyle = "black";
+                                            myContext.lineWidth = 2;
+                                            myContext.lineTo(210, 175);
+                                            myContext.stroke();
+                                
+                                            myContext.beginPath();
+                                            myContext.moveTo(75, 145);
+                                            myContext.strokeStyle = "black";
+                                            myContext.lineWidth = 2;
+                                            myContext.lineTo(210, 175);
+                                            myContext.stroke();
+                                
+                                            myContext.beginPath();
+                                            myContext.moveTo(140, 285);
+                                            myContext.strokeStyle = "black";
+                                            myContext.lineWidth = 2;
+                                            myContext.lineTo(210, 175);
+                                            myContext.stroke();
+                                
+                                            myContext.beginPath();
+                                            myContext.moveTo(280, 285);
+                                            myContext.strokeStyle = "black";
+                                            myContext.lineWidth = 2;
+                                            myContext.lineTo(210, 175);
+                                            myContext.stroke();
+                                
+                                            myContext.beginPath();
+                                            myContext.moveTo(345, 145);
+                                            myContext.strokeStyle = "black";
+                                            myContext.lineWidth = 2;
+                                            myContext.lineTo(210, 175);
+                                            myContext.stroke();
+                                
+                                            // 오각형 각 꼭짓점에 글자 넣기
+                                            myContext.font = "15pt 카페24 당당해";
+                                            myContext.fillStyle = "black";
+                                            myContext.fillText(text1, 185, 30); // 계획형
+                                
+                                            myContext.font = "15pt 카페24 당당해";
+                                            myContext.fillStyle = "black";
+                                            myContext.fillText(text2, 10, 150); // 외향형
+                                
+                                            myContext.font = "15pt 카페24 당당해";
+                                            myContext.fillStyle = "black";
+                                            myContext.fillText(text3, 105, 315); // 감성적
+                                
+                                            myContext.font = "15pt 카페24 당당해";
+                                            myContext.fillStyle = "black";
+                                            myContext.fillText(text4, 260, 315); // 이성적
+                                
+                                            myContext.font = "15pt 카페24 당당해";
+                                            myContext.fillStyle = "black";
+                                            myContext.fillText(text5, 360, 150); // 내향형
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border : 3px outset rgb(92, 92, 92); border-radius: 10px; background-color: white;">
+                                        <img src="images/estj.png" width="200px" height="230px">
+                                    </td>
+                                    <td>
+                                        <strong id="css1">ESTJ인 내 성격의 특징은
+                                        </strong><br><p id="css2">
+                                        추진력이 있으며 책임감이 강하다. 외로움을 타지 않으며 명확하고 현실적인 문제에 집중한다.
+                                        모범적인 시민이 되는 것이 목표(?)이기도 하다. 그러나 감정이 메마른 사람처럼 공감 능력이 살짝 부족한 편이다.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </article>
+                <footer>
+                    <div id ="footer">
+                        <div id="space">Copyright 2021 Jiyoon. All rights reserved.
+                        Contact me for more question. giyun3632@naver.com</div>
+                    </div>
+                </footer>
+            </div>
+        </body>
+    </html>

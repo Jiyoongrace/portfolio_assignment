@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>index</title>
+            <link rel="stylesheet" type="text/css" href="index.css"/>
+            <script type="text/javascript">
+
+                // 한번 알림 띄우기
+                setTimeout(function() {
+                    alert("카테고리를 클릭해보세요! \n눈송이와 대화도 해보세요~ \n방명록도 남겨주신다면 정말 감사합니다:)"); // window 객체
+                }, 1000);
+                
+                // 방명록 기능 구현
+                var visitor_record = new Array(); // 배열 객체
+            
+                function record(visitor, content) {
+                this.name=visitor;
+                this.content_record=content;
+                this.time=new Date(); // Date 객체
+            
+                }
+                
+                record.prototype.day_record = function () {
+                return this.time.getFullYear() + "년 "
+                    + (this.time.getMonth()+1) + "월 "
+                    + this.time.getDate() + "일 "
+                    + this.time.getHours() + "시 "
+                    + this.time.getMinutes() + "분 방문함";
+                            
+                }
+            
+                function result() {
+                var visitor = document.getElementById("visitor").value;
+                var content = document.getElementById("content").value;
+                
+                var arr_len = visitor_record.length;
+                
+                visitor_record[arr_len] = new record(visitor, content); // 사용자 정의 생성자
+                
+                print(arr_len);
+                
+                clear();
+                } 
+            
+                // 방명록 작성한 방문자들 내용 추가
+                function print(i) {
+                var table_record = document.getElementById("visitor_table");
+                var table_tr = document.createElement("tr");
+            
+                var tb = document.getElementById('visitor_table');
+                var row_num = tb.rows.length; // 방명록에 채워지는 수 만큼 comment 숫자 증가시키기
+            
+                table_tr.append(create_td((i+1).toString()));  // 번호
+                table_tr.append(create_td(visitor_record[i].name)); // 방문자 이름
+                table_tr.append(create_td(visitor_record[i].content_record)); // 남긴 글
+                table_tr.append(create_td(visitor_record[i].day_record())); // 작성 날짜 및 시간
+                    
+                table_record.append(table_tr);
+            
+                num2.innerText = row_num;
+                }
+                
+                function create_td(text) {
+                var text_record = document.createTextNode(text);
+                var table_td = document.createElement("td");
+            
+                table_td.append(text_record);
+                return table_td;
+            
+                }
+            
+                function clear() {
+                
+                        document.getElementById("visitor").value="";
+                        document.getElementById("content").value="";  
+                }
+                
+                // 타이핑 효과
+                var my_ment = "위의 Like 버튼을 눌러주세요:) 아래에 방명록을 남겨주시면 저에게 큰 힘이 됩니다!      ";
+                var k = 0;
+                var len_ment = my_ment.length;
+
+                function typing_ment() {
+                document.form_ment.text_ment.value = my_ment.substring(0, k);
+
+                    if (k++ == len_ment) {
+                        k = 1;
+                        setTimeout("typing_ment2()", 10);
+                    } else {
+                        setTimeout("typing_ment()", 100);                             
+                    }
+                }
+
+                function typing_ment2() {
+                    document.form_ment.text_ment.value = my_ment.substring(0, len_ment-k);
+                        if (k++ == len_ment) {
+                            k = 0;
+                            setTimeout("typing_ment()", 100);
+                        } else {
+                            setTimeout("typing_ment2()", 10);
+                        }
+                }
+
+                // 눈송이와 대화하는 기능 구현
+                var ment_ob = {
+                    "안녕": "나는 눈송이라고 해!",
+                    "뭐해?": "너랑 대화 중~",
+                    "나 종강이다~": "종강 축하해 방학을 즐기자~ :)", 
+                    "불 꺼줘": "불 껐어:)",
+                    "불 켜줘": "불 껐어:)",
+                    "숨바꼭질 하자": "나 숨었다 찾아봐 ㅎㅎ",
+                    "다시 나와줘": "다시 등장~"
+                    
+                }
+                var light =  1;
+                function communication(){
+                    var snow_answer = document.getElementById('snow_ment');
+                    var my_answer = document.getElementById('my_ment').value;
+                    var snowImg = document.getElementById('img11');
+                    
+
+                    for(var key in ment_ob){ // for문 사용
+                        if(my_answer == key) {
+                            if(key == "불 꺼줘"){
+                                
+                                if(light == 0){
+                                    ment_ob[key] = "불은 이미 꺼져 있어:)";
+                                }
+                                else{
+                                    ment_ob[key] = "불 껐어:)"
+                                    light = 0;
+                                }
+                            }
+                            else if(key == "불 켜줘"){
+                                if(light == 1){
+                                    ment_ob[key] = "불은 이미 켜져 있어:)";
+                                }
+                                else {
+                                    ment_ob[key] = "불 켰어:)"
+                                    light = 1;
+                                }
+                            }
+                            if(key == "숨바꼭질 하자") {
+                                snowImg.style.visibility="hidden";
+                            }
+                            else if(key == "다시 나와줘") {
+                                snowImg.style.visibility="visible";
+                            }
+                            snow_answer.innerHTML = ment_ob[key];
+                        }
+                    }
+                    if(light == 1){
+                        document.body.style.backgroundColor = "rgb(224, 177, 255)";
+                    }
+                    else{
+                        document.body.style.backgroundColor = "midnightblue";
+                    }
+                }
+                function select_event() {
+                    var snow_answer = document.getElementById('snow_ment');
+                    
+                    snow_answer.innerHTML = "";
+
+                }
+            </script>
+        </head>
+        <body onload="typing_ment();"> <!-- 프레임/객체 이벤트 -->
+            <div class="edge">
+                    <aside>
+                    <div id ="aside"><br><br>
+                        <div>
+                            <img src="images/profile.jpg" alt="프로필 사진" id="circle">
+                            <span id = "myname">Bae Ji Yoon<br>배지윤</span><br><br>
+                            <span id = "school">숙명여대 수학과 19학번</span><br><br><br>
+                        </div>
+                        <div id ="form">
+                            <form>
+                                <table>
+                                    <tr>
+                                       <th>ID : &nbsp;&nbsp;<input type="text" name ="ID" value="아이디를 입력하세요."></th>
+                                       <td rowspan="2">
+                                        <button type="submit" class="ent_btn color">Enter</button>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>PW : <input type="password" name="password" placeholder="********"></th>
+                                    </tr>
+                                 </table>
+                            </form>
+                        </div> <br><br><br><br>
+                        <div> <!-- 방문자들에게 추천할 카테고리 - 링크 걸기 (눈송이 챗봇, 성격 검사 도형 Canvas, ) -->
+                            <table id="aside_table" style="position: absolute; width: 280px;">
+                                <tr>
+                                    <td colspan="2">
+                                        <span id="font5">눈송이와 대화를 시도해 보세요!</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class = "box1">
+                                            <span id="snow_ment">나랑 대화하자~!</span><br><br>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span> <img class="snow_img" src = "images/snow_mascot.gif" id="img11"> </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <form>
+                                            <select name="talking" id = "my_ment" onfocus="select_event();">
+                                              <option value="none">선택하세요!</option>
+                                              <option value="안녕">안녕</option>
+                                              <option value="뭐해?">뭐해?</option>
+                                              <option value="나 종강이다~">나 종강이다~</option>
+                                              <option value="불 꺼줘">불 꺼줘</option>
+                                              <option value="불 켜줘">불 켜줘</option>
+                                              <option value="숨바꼭질 하자">숨바꼭질 하자</option>
+                                              <option value="다시 나와줘">다시 나와줘</option>
+                                            </select>
+                                          </form>
+                                    </td>
+                                    <td><!-- 마우스 click 이벤트 -->
+                                        <input type = "button" class = "co_btn_css" value="대화하기" onclick="communication();"> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="border-top: 2.5px solid rgb(92, 92, 92);"> 
+                                        <span id="font5"> ESTJ의 특징?! </span><br>
+                                        <span id="font5" style="font-size: 15px; background-color: wheat;"> 오각형으로 표현해본 Canvas를 <br> 아래의 버튼을 눌러 확인해보세요!</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <a href="menu4.html#myCanvas" style="text-decoration:none;">
+                                            <button class="co_btn_css" style="width: 130px;">캔버스 보러가기
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </aside>
+                    <article>
+                    <div id ="article"><br><br><br>
+                        <span id="title">PORTFOLIO</span><br><br><br>
+                        <span id="comment">Click the Categories!</span><br><br>
+                        <div>
+                            <ul>
+                                &nbsp;&nbsp;
+                                <li><a id = "menu1" href="menu1.html" title="프로필">ABOUT ME</a>&nbsp;&nbsp;&nbsp;</li>
+                                <span id="font1">Education</span>
+                                <span id="font1">Who Am I?</span>
+                                <span id="font1">Instagram</span><br><br><br>
+                                &nbsp;&nbsp;
+                                <li><a id = "menu2" href="menu2.html" title="활동">ACTIVITIES</a>&nbsp;&nbsp;&nbsp;</li>
+                                <span id="font2">Career</span>&nbsp;&nbsp;&nbsp;
+                                <span id="font2">Work</span>&nbsp;&nbsp;<br><br><br>
+                                &nbsp;&nbsp;
+                                <li><a id = "menu3" href="menu3.html" title="관심사">INTERESTS</a>&nbsp;&nbsp;&nbsp;</li>
+                                <span id="font3">Baseball</span>&nbsp;&nbsp;&nbsp;
+                                <span id="font3">Music</span>&nbsp;&nbsp;&nbsp;<br><br><br>
+                                &nbsp;&nbsp;
+                                <li><a id = "menu4" href="menu4.html" title="내가 만든 자료들">ETC</a>&nbsp;&nbsp;</li>
+                                <span id="font4">My materials</span>&nbsp;&nbsp;&nbsp;
+                                <span id="font4">TMI</span>&nbsp;&nbsp;<br>
+                            </ul>
+                        </div>
+                        <div><br> <!-- 누르면 숫자가 올라가는 좋아요 버튼과 기록된 방문자 코멘트의 갯수를 담을 버튼-->
+                            <span id="css1" style="background-color: #ffaab8;">방명록</span> 
+                            <button class="btn color" onclick ="add();" style="font-family: 'Cafe24Dangdanghae';">
+                             Like ♥ <span id = "num">0</span></button> 
+                             
+                             <!-- 마우스 dbclick 이벤트 -->
+                            <button class="btn color" ondblclick="com();" style="font-family: 'Cafe24Dangdanghae';"> 
+                                Comment <span id = "num2">0</span></button><br><br>
+                         
+                            <script type="text/javascript" >
+                                var num = document.getElementById('num');
+                         
+                                function add() { // Like 버튼을 클릭하면 누를 때 마다 숫자 증가
+                                    var value = parseInt(num.innerText, 10)
+                                    num.innerText = value + 1;
+                                }
+                         
+                                function com() { // Comment 버튼을 더블클릭하면 방명록 작성 바로 하도록 이름 text박스로 focus
+                                 document.getElementById("visitor").focus();	   
+                                }
+
+                                function foc1() { // 이름 칸에 focus 시 색 바뀌고 내용 원래 그대로 색 유지
+                                    document.getElementById("visitor").style = "background-color: #e4d1ff; width: 508.5px;";
+                                    document.getElementById("content").style = "background-color: #FFF8DC; width: 508.5px;";
+
+                                }
+                                function foc2() { // 내용 칸에 focus 시 색 바뀌고 이름 칸 원래 그대로 색 유지
+                                    document.getElementById("content").style = "background-color: #e4d1ff; width: 508.5px;";
+                                    document.getElementById("visitor").style = "background-color: #FFF8DC; width: 508.5px;";
+
+                                }
+                            </script> 
+                         </div>
+                         
+                            <div> <!-- 방문자 기록 작성할 테이블-->
+                                  <table id="record_table1">
+                                      <tr>
+                                        <td colspan="3">
+                                            <form name="form_ment">
+                                                <input type="text" name="text_ment"
+                                                style="width: 650px; background-color: rgb(255, 206, 115); font-size: 15px;
+                                                border-color: rgb(255, 135, 55); font-family: 'Cafe24Dangdanghae';">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <th>이름</th>
+                                        <td>
+                                           <input type="text" id="visitor" style="width: 508.5px;" onfocus="foc1();">
+                                        </td>
+                                        <td rowspan="2">
+                                            <!-- 마우스 mouseup 이벤트 -->
+                                         <input type="button" value="방명록 남기기" id="record_btn" class="color" onmouseup="result();">
+                                        </td>
+                                     </tr>
+                                     <tr>
+                                        <th>내용</th>
+                                        <td>
+                                           <input type="text" id="content" style="width: 508.5px;" onfocus="foc2();">
+                                        </td>
+                                     </tr>
+                         
+                                  </table>
+                                 <br>
+                         
+                                  <!-- 방문자 기록 추가 될 테이블-->
+                                  <table class="record_table2" id="visitor_table" style="text-align: center;">
+                                     <tr>
+                                        <th style="border-right: 3px solid rgb(92, 92, 92); width: 50px;">번호</th>
+                                        <th style="border-right: 3px solid rgb(92, 92, 92); width: 100px;">방문자</th>
+                                        <th style="border-right: 3px solid rgb(92, 92, 92); width: 300px;">남긴 글</th>
+                                        <th style="width: 250px;">작성 날짜 및 시간</th>
+                                     </tr>
+                                  </table>           
+                            </div>
+                    </div>
+                    </article>
+                    <footer>
+                        <div id ="footer">Copyright 2021 Jiyoon. All rights reserved.
+                            Contact me for more question. giyun3632@naver.com
+                        </div>
+                    </footer>
+            </div>
+        </body>
+    </html>
